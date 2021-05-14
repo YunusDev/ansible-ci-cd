@@ -7,7 +7,7 @@ jobs:
         steps:
             - checkout
             - add_ssh_keys:
-                fingerprints: ["32:4d:04:cc:69:1d:23:c5:0f:0d:b7:fb:25:a0:3e:5f"]
+                fingerprints: ["32:4d:04:cc:69:1d:23:c5:0f:0d:b7:fb:25:a0:3e:5f", "6f:7f:c4:6c:55:99:17:2a:cc:e9:bb:83:4f:0f:7d:11"]
 
             - run:
                 name: Install Dependencies
@@ -17,8 +17,7 @@ jobs:
             - run:
                 name: Configure server
                 command: |
-                    ansible-playbook main-remote.yml -i inventory --private-key ansible-new.pem
-
+                    ansible-playbook main-remote.yml -i inventory
 workflows:
     my_work_flow:
         jobs:
