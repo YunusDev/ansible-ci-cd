@@ -17,7 +17,7 @@ jobs:
             - run:
                 name: Configure server
                 command: |
-                    ansible-playbook main-remote.yml -i inventory  
+                    ansible-playbook main-remote.yml -i inventory --private-key ansible-new.pem
 
 workflows:
     my_work_flow:
